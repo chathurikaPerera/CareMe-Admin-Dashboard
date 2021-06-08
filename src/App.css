@@ -291,14 +291,14 @@ main{
 }
 .main-card{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 30% 30% 30%;
   gap: 30px;
   margin: 20px 20px;
 }
 .main-card2{
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 30px;
+  grid-template-columns: 45% 45%;
+  gap: 60px;
   margin: 20px 20px;
 }
 .card{
@@ -310,6 +310,7 @@ main{
   border-radius: 5px;
   background: white; /*#a5aaad;*/
   box-shadow: 5px 5px 8px #888888;
+  width: 80%;
   
 }
 .card-text{
@@ -466,4 +467,59 @@ main{
 }
 .chart-name{
   color: #920d0d;
+}
+
+/*sign up */
+.signup-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./images/doctor.jpg) center/cover no-repeat;
+  height: 100vh;
+  background-color: #646161;
+}
+.signup{
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+  align-items: center;
+  background-color: #bfeaf1;
+  flex-direction: column;
+}
+.form-new{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.form-input-row{
+  display: inline-flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.signup-label{
+  font-size: 18px;
+  width: 200px;
+}
+.signup-input{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-left: 20px;
+  width: 300px;
+  background-color: #bfeaf1;
+}
+.signup-button{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 150px;
+  padding: 10px;
+  background-color: rgb(2, 36, 110);
+  color: white;
+  border: none;
+  border-radius: 2px;
+
 }
