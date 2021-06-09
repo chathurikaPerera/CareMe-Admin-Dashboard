@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import firebase from '../Firebase.js';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
     constructor(props){
         super(props);
-        this.state = {email:'', role:'', password:'', confirm_password:''};
+        this.state = {email:'', role:'', password:'', confirm_password:'', redirect:false};
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -15,17 +17,29 @@ class SignUp extends Component {
     }
 
     handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(this.state.email);
+      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(
+        this.setState({redirect:true})
+      );
+      console.log('create successfully');
         
     }
 
-
-
-
-
     render() {
+      const {redirect} = this.state;
+
+        if(redirect){
+            return(
+                <Redirect to="/login" />
+            );
+        }
         return (
             <div className="signup-container">
+               
                <div className="signup">
+               <h2>Sign Up</h2>
                   <form className="form-new" onSubmit={this.handleSubmit}>
                       <div className="form-input-row">
                         <label class="signup-label">Email</label>

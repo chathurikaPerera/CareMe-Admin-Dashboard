@@ -13,7 +13,8 @@ import LogIn from './pages/LogIn';
 function App() {
   return (<>
     <Switch>
-    <Route exact path="/" component={Home}/>
+    <Route exact path="/" component={SignUp}/>
+    <Route exact path="/home" component={Home}/>
     <Route exact path="/login" component={LogIn}/>
     <Route exact path="/doctor/" component={Doctor}/>
     <Route exact path="/doctor/add-doctor/" component={AddDoctor} />

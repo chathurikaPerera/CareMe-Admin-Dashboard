@@ -475,17 +475,27 @@ main{
   justify-content: center;
   align-items: center;
   background: url(./images/doctor.jpg) center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #646161;
 }
 .signup{
   width: 50%;
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: center;
   border-radius: 2px;
   align-items: center;
-  background-color: #bfeaf1;
+  background-color: rgb(242, 241, 241);
+  flex-direction: column;
+}
+.login{
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+  align-items: center;
+  background-color: rgb(242, 241, 241);
   flex-direction: column;
 }
 .form-new{
@@ -496,7 +506,8 @@ main{
 
 }
 .form-input-row{
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
   align-items: flex-start;
 }
@@ -505,15 +516,15 @@ main{
   width: 200px;
 }
 .signup-input{
-  border: none;
+  height: 30px;
   outline: none;
-  border-bottom: 1px solid black;
-  margin-left: 20px;
   width: 300px;
-  background-color: #bfeaf1;
+  border-radius: 3px;
+  background-color: rgb(242, 241, 241);
+  border: 1px solid rgb(1, 137, 201);
 }
 .signup-button{
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
   width: 150px;
   padding: 10px;
