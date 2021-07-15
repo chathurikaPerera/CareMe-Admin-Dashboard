@@ -5,12 +5,10 @@ import Navbar from '../components/Navbar';
 export default function Home() {
     return (<>
         <Navbar/>
-        <div className="header">
-            <Link to="/doctor" className="select-button">Admin</Link>
-            <Link to="/rooms" className="select-button">Receptionalist</Link>
-            
-        </div>
+            <div className="header">
+                <Link to="/doctor" className="select-button">Admin</Link>
+                <Link to="/receptionalist" className="select-button">Receptionalist</Link>    
+            </div>
         </>
-    
     )
 }

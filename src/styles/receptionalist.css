@@ -1,0 +1,17 @@
+.newcontainer {
+  margin-top: 30px;
+  background-color: aqua;
+}
+
+.newtable {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgb(211, 159, 16);
+}
+
+.newtable th,
+td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
