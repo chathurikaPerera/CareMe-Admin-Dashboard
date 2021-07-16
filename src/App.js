@@ -10,6 +10,8 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import RegisterReceptionist from './components/receptionist/RegisterReceptionist';
 
+import RecepDashboard from './pages/receptionalist/Receptionalist';
+import NewAppointments from './pages/receptionalist/NewAppointments';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
     <Route exact path="/doctor/appointments/" component={Appointments} />
     <Route exact path="/receptionist/edit-receptionist/" component={RegisterReceptionist} />
 
+    <Route exact path="/receptionalist" component={RecepDashboard} />
+    <Route exact path="/receptionalist/newappointments" component={NewAppointments} />
     </Switch>
     </>
   );
