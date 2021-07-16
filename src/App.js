@@ -8,6 +8,8 @@ import Appointments from './pages/Appointments';
 import { Route, Switch } from 'react-router-dom';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
+import RegisterReceptionist from './components/receptionist/RegisterReceptionist';
+
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
     <Route exact path="/doctor/add-doctor/" component={AddDoctor} />
     <Route exact path="/doctor/edit-doctor/" component={EditDoctor} />
     <Route exact path="/doctor/appointments/" component={Appointments} />
+    <Route exact path="/receptionist/edit-receptionist/" component={RegisterReceptionist} />
+
     </Switch>
     </>
   );
