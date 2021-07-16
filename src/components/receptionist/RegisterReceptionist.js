@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
 import firebase from '../../Firebase.js';
-import Doctorlist from '../Doctorlist';
 
-class Register extends Component {
+
+
+class RegisterReceptionist extends Component {
     constructor(props) {
         super(props);
-        this.state = { name: '', hospital: '', specialist: '', nic: '', docId: '', age: '', gender: '', address: '', mobile: '', email: '', list: [] };
+        this.state = {
+            name: '',
+            hospital: '',
+            receptionID: '',
+            nic: '',
+            age: '',
+            gender: '',
+            address: '',
+            mobile: '',
+            email: ''
+
+        };
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-
-
-    // getDoctor = () => {
-    //     const item=[];
-    //     const ref = firebase.firestore().collection("doctors");
-    //     ref.onSnapshot((querySnapshot) => {
-    //         querySnapshot.forEach((doc) => {
-    //             item.push(doc.data());
-    //         });
-    //     })
-    //     this.setState({list:item});
-    //     console.log(this.list);
-    // }
 
     handleChange = event => {
         this.setState({
@@ -29,33 +28,31 @@ class Register extends Component {
         });
     }
 
-    // componentDidMount(){
-    //     this.getDoctor();
-    // }
-
-    handleSubmit = (event) => {
+    handleSubmit = event => {
         event.preventDefault();
         alert(this.state.name);
-        const ad = firebase.firestore();
+        const add = firebase.firestore();
         console.log(this.state.nic);
-        const user = ad.collection("doctors").doc(this.state.nic).set({
-            address: this.state.address,
-            age: this.state.age,
-            doctorID: this.state.docId,
-            gender: this.state.gender,
-            hospital: this.state.hospital,
-            mobile: this.state.mobile,
+        const user = add.collection("receptionists").doc(this.state.nic).set({
             name: this.state.name,
-            specialist: this.state.specialist,
+            hospital: this.state.hospital,
+            receptionID: this.state.receptionID,
+            age: this.state.age,
+            gender: this.state.gender,
+            address: this.state.address,
+            mobile: this.state.mobile,
             email: this.state.email,
         })
     }
+
+
+
     render() {
         return (
-            <main className="main-container">
+            <main>
                 <div className="register-card">
                     <div className="form-container">
-                        <h2>Add Doctor </h2>
+                        <h2>Add Receptionist </h2>
                         <form onSubmit={this.handleSubmit} className="form">
                             <div className="form-input">
                                 <div className="form-label"><label>Name</label></div>
@@ -67,14 +64,10 @@ class Register extends Component {
                                 <div><input type="text" name="hospital" onChange={this.handleChange} className="input" /></div>
 
                             </div>
-                            <div className="form-input">
-                                <div className="form-label"><label>Specialist</label></div>
-                                <div><input type="text" name="specialist" onChange={this.handleChange} className="input" /></div>
 
-                            </div>
                             <div className="form-input">
-                                <div className="form-label"><label>Doctor ID</label></div>
-                                <div><input type="text" name="docId" onChange={this.handleChange} className="input" /></div>
+                                <div className="form-label"><label>Receptionist ID</label></div>
+                                <div><input type="text" name="receptionID" onChange={this.handleChange} className="input" /></div>
 
                             </div>
                             <div className="form-input">
@@ -110,17 +103,12 @@ class Register extends Component {
                             <div className="form-input-button"><input type="submit" value="Submit" /></div>
                         </form>
                     </div>
-                    <div className="doctor-container">
-                        <h2>Specialist list </h2>
-                        <Doctorlist />
 
-                    </div>
 
                 </div>
-
             </main>
         );
     }
 }
 
-export default Register;
+export default RegisterReceptionist;
